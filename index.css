@@ -37,3 +37,23 @@
 .foodImage {
   width: 100%;
 }
+.filter-btn {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-cards {
+  width: 200px;
+  height: 400px;
+  margin: 5px;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.filter {
+  display: flex;
+}

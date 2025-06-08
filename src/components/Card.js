@@ -9,8 +9,6 @@ const Card = (props) => {
   const { resObj } = props;
   const { name, cloudinaryImageId, cuisines, costForTwo, sla, avgRating } =
     resObj.info;
-
-  console.log(resObj);
   return (
     <div className="card" style={styleCard}>
       <img

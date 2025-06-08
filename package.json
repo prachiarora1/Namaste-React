@@ -19,8 +19,11 @@
   },
   "homepage": "https://github.com/prachiarora1/Namaste-React#readme",
   "dependencies": {
+    "caniuse-lite": "^1.0.30001579",
+    "force": "^0.0.3",
     "parcel-bundler": "^1.12.5",
-    "react": "^18.2.0",
-     "react-dom": "^18.2.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.22.0"
   }
 }
