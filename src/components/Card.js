@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { CDN_URL } from "../utils/Constants";
 
 const Card = (props) => {
@@ -10,13 +9,13 @@ const Card = (props) => {
   const { name, cloudinaryImageId, cuisines, costForTwo, sla, avgRating } =
     resObj.info;
   return (
-    <div className="card" style={styleCard}>
+    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
       <img
-        className="foodImage"
+        className="rounded-lg"
         alt="foodImage"
         src={CDN_URL + cloudinaryImageId}
       />
-      <h4> {name}</h4>
+      <h3 className="font-bold py-4 text-lg"> {name}</h3>
       <h4> {cuisines.join(", ")}</h4>
       <h4> {avgRating} stars</h4>
       <h4> {costForTwo}</h4>
