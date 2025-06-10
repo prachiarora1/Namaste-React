@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./card";
+import Card, { withPromotedLabel } from "./Card";
 import resList from "../utils/MockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./shimmer";
@@ -10,6 +10,7 @@ const Body = () => {
   const [list, setList] = useState(null);
   const [filterList, setFilterList] = useState(null);
   const [searchText, setSearchText] = useState("");
+  const PromotedCard = withPromotedLabel(Card);
 
   const fetchData = async () => {
     let data = await fetch(
@@ -69,7 +70,11 @@ const Body = () => {
       <div className="flex flex-wrap">
         {filterList?.map((res) => (
           <Link key={res.info.id} to={"restaurants/" + res.info.id}>
-            <Card resObj={res} />
+            {Object.keys(res.info.badges)?.length ? (
+              <PromotedCard resObj={res} />
+            ) : (
+              <Card resObj={res} />
+            )}
           </Link>
         ))}
       </div>
