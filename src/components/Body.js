@@ -1,17 +1,18 @@
 import React from "react";
 import Card, { withPromotedLabel } from "./Card";
 import resList from "../utils/MockData";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [list, setList] = useState(null);
   const [filterList, setFilterList] = useState(null);
   const [searchText, setSearchText] = useState("");
   const PromotedCard = withPromotedLabel(Card);
-
+  const { loggedInUser, setUserName } = useContext(UserContext);
   const fetchData = async () => {
     let data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -65,6 +66,15 @@ const Body = () => {
           >
             Top rated restaurants
           </button>
+        </div>
+        <div className="m-4 p-4 flex items-center">
+          Username:
+          <input
+            type="text"
+            className="border border-solid border-black "
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+          ></input>
         </div>
       </div>
       <div className="flex flex-wrap">
