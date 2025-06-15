@@ -1,18 +1,18 @@
-// import { useDispatch } from "react-redux";
-// import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/cartSlice";
 import { CDN_URL } from "../utils/Constants";
 
 const ItemList = ({ items, dummy }) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleAddItem = (item) => {
     // Dispatch an action
-    // dispatch(addItem(item));
+    dispatch(addItems(item));
   };
 
   return (
     <div>
-      {items.map((item) => (
+      {items?.map((item) => (
         <div
           data-testid="foodItems"
           key={item.card.info.id}

@@ -25,7 +25,7 @@ const Body = () => {
   };
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   const onlineStatus = useOnlineStatus();
 
