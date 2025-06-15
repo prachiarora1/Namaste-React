@@ -10,14 +10,22 @@ const Cart = () => {
 
   return (
     <div className="text-center m-20 p-20">
-      <h1 className="text-2xl font-bold">Cart Page</h1>
-      <button
-        className="bg-black text-white rounded-md m-4 p-4"
-        onClick={handleClick}
-      >
-        Clear Cart
-      </button>
-      <ItemList items={cartItems} />
+      <h1 className="text-2xl font-bold mb-4">Cart Page</h1>
+
+      <div className="relative">
+        <button
+          className="absolute right-0 top-0 bg-black text-white rounded-md p-2"
+          onClick={handleClick}
+        >
+          Clear Cart
+        </button>
+
+        <div className="pt-12">
+          {" "}
+          {/* Add top padding to create space for the button */}
+          <ItemList items={cartItems} />
+        </div>
+      </div>
     </div>
   );
 };
